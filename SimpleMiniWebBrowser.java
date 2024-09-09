@@ -31,7 +31,7 @@ import java.util.ArrayList;
 
 
 public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
-  //Create instances for...
+  // Create instances for...
   private JButton buttonBack = new JButton("<"), buttonForward = new JButton(">");//...the Back button
 
   private JTextField locationTextField = new JTextField(35);//...the text field (35 chars)
@@ -43,18 +43,18 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
 
 
   public SimpleMiniWebBrowser() {
-    setSize(640, 480);//window size to 640px by 480px
+    setSize(640, 480); // Window size to 640px by 480px
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//what to do on close (default)
     JPanel bttnPanel = new JPanel();//Create a JPanel instance with refVar bttnPanel
 
-    //back button's ActionListener
+    // Back btn's ActionListener
     buttonBack.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         backActn();
       }
     });
 
-    //forward Button's ActionListener
+    // Forward btn's ActionListener
     buttonBack.setEnabled(false);
     bttnPanel.add(buttonBack);
     buttonForward.addActionListener(new ActionListener() {
@@ -63,7 +63,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
       }
     });
 
-    //Setup The text Field
+    // Setup The text Field
     buttonForward.setEnabled(false);
     bttnPanel.add(buttonForward);
     locationTextField.addKeyListener(new KeyAdapter() {
@@ -74,7 +74,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
       }
     });
 
-    //bttnGo
+    // bttnGo
     bttnPanel.add(locationTextField);
     JButton bttnGo = new JButton("GO");
     bttnGo.addActionListener(new ActionListener() {
@@ -83,7 +83,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
       }
     });
 
-    //Set Display Panel
+    // Set Display Panel
     bttnPanel.add(bttnGo);
     displayEditorPane.setContentType("text/html");
     displayEditorPane.setEditable(false);
@@ -92,7 +92,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
     getContentPane().setLayout(new BorderLayout());
     getContentPane().add(bttnPanel, BorderLayout.NORTH);
     getContentPane().add(new JScrollPane(displayEditorPane), BorderLayout.CENTER);
-  }//close SimpleMiniWebBrowser()
+  }// Close SimpleMiniWebBrowser()
 
 
 
@@ -106,7 +106,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
     }
   }
 
-  //Navigate forward action
+  // Navigate forward action
   private void forwardActn() {
     URL currentUrl = displayEditorPane.getPage();
     int pageIndex = pageList.indexOf(currentUrl.toString());
@@ -116,7 +116,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
     }
   }
 
-  //Go action
+  // Go action
   private void actionGo() {
     URL verifiedUrl = verifyUrl(locationTextField.getText());
     if (verifiedUrl != null) {
@@ -127,7 +127,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
   }
 
 
-  //verify the URL
+  // Verify the URL
   private URL verifyUrl(String url) {
     if (!url.toLowerCase().startsWith("http://"))
       return null;
@@ -142,7 +142,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
     return verifiedUrl;
   }
 
-  //Display the page
+  // Display the page
   private void showPage(URL pageUrl, boolean addToList) {
     try {
       URL currentUrl = displayEditorPane.getPage();
@@ -172,7 +172,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
 
 
 
-  //Update the Buttons
+  // Update the Buttons
   private void updateBttns() {
     if (pageList.size() < 2) {
       buttonBack.setEnabled(false);
@@ -185,7 +185,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
     }
   }
 
-  //Update the links
+  // Update the links
   public void hyperlinkUpdate(HyperlinkEvent event) {
     HyperlinkEvent.EventType eventType = event.getEventType();
     if (eventType == HyperlinkEvent.EventType.ACTIVATED) {
@@ -207,4 +207,4 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
     browser.setVisible(true);
   }//main()
 
-}//Close Class--SimpleMiniWebBrowser
+}// Close Class--SimpleMiniWebBrowser
