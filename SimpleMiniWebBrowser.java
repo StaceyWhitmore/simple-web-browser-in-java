@@ -1,6 +1,6 @@
 
 
-/*Swing Imports*/
+/* Swing Imports*/
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
@@ -16,7 +16,7 @@ import javax.swing.event.HyperlinkListener;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLFrameHyperlinkEvent;
 
-/*Abstract Window ToolKit imports */
+/* Abstract Window ToolKit imports */
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
@@ -201,7 +201,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
 
 
 
-  /*MAIN METHOD*/
+  /* MAIN METHOD*/
   public static void main(String[] args) {
     SimpleMiniWebBrowser browser = new SimpleMiniWebBrowser();
     browser.setVisible(true);
