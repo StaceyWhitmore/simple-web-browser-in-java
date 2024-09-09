@@ -32,11 +32,11 @@ import java.util.ArrayList;
 
 public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
   // Create instances for...
-  private JButton buttonBack = new JButton("<"), buttonForward = new JButton(">");//...the Back button
+  private JButton buttonBack = new JButton("<"), buttonForward = new JButton(">"); //...the Back button
 
-  private JTextField locationTextField = new JTextField(35);//...the text field (35 chars)
+  private JTextField locationTextField = new JTextField(35); //...the text field (35 chars)
 
-  private JEditorPane displayEditorPane = new JEditorPane();//...the display panel
+  private JEditorPane displayEditorPane = new JEditorPane(); //...the display panel
 
   private ArrayList pageList = new ArrayList(); //...and an ArrayList for pageList
 
@@ -44,8 +44,8 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
 
   public SimpleMiniWebBrowser() {
     setSize(640, 480); // Window size to 640px by 480px
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//what to do on close (default)
-    JPanel bttnPanel = new JPanel();//Create a JPanel instance with refVar bttnPanel
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // What to do on close (default)
+    JPanel bttnPanel = new JPanel(); // Create a JPanel instance with refVar bttnPanel
 
     // Back btn's ActionListener
     buttonBack.addActionListener(new ActionListener() {
@@ -167,7 +167,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
     } catch (Exception e) {
       System.out.println("Unable to load page");
     }
-  }//close showPage()
+  } // Close showPage()
 
 
 
