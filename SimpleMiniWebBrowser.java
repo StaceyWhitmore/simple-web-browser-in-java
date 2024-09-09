@@ -184,6 +184,7 @@ public class SimpleMiniWebBrowser extends JFrame implements HyperlinkListener {
       buttonForward.setEnabled(pageIndex < (pageList.size() - 1));
     }
   }
+  
 
   // Update the links
   public void hyperlinkUpdate(HyperlinkEvent event) {
